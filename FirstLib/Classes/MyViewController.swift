@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 public class MyViewController: UIViewController {
 
@@ -14,5 +15,13 @@ public class MyViewController: UIViewController {
 
         view.backgroundColor = UIColor.blue
         title = "hahahaha"
+        
+        let newView = UIView()
+        view.addSubview(newView)
+        newView.backgroundColor = UIColor.green
+        newView.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.width.height.equalTo(50)
+        }
     }
 }
